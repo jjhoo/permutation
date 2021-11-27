@@ -12,7 +12,6 @@ module Data.Choose.Base
         
 import Control.Monad
 import Control.Monad.ST
-import Foreign
 
 import Data.IntArray ( IntArray, STIntArray )
 import qualified Data.IntArray as Arr

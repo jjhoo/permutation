@@ -23,9 +23,9 @@ license-file:    LICENSE
 copyright:       (c) 2008. Patrick Perry <patperry@stanford.edu>
 author:          Patrick Perry
 maintainer:      Sophie Taylor <sophie@traumapony.org>
-cabal-version: >= 1.6
+cabal-version: >= 1.10
 build-type:      Simple
-tested-with:     GHC ==7.8.1
+tested-with:     GHC ==8.8.4
 
 extra-source-files:  examples/Enumerate.hs
                      tests/Test/Choose.hs
@@ -61,16 +61,19 @@ library
                      Data.Permute.IOBase
 
     build-depends:   base < 5 && >=4
-    extensions:      BangPatterns, 
-                     FlexibleContexts,
-                     FunctionalDependencies, 
-                     MagicHash,
-                     MultiParamTypeClasses, 
-                     Rank2Types,
-                     UnboxedTuples,
-                     CPP
+
+    other-extensions: BangPatterns,
+                      CPP,
+                      FlexibleContexts,
+                      FunctionalDependencies,
+                      MagicHash,
+                      MultiParamTypeClasses,
+                      Rank2Types,
+                      UnboxedTuples
 
     ghc-options:     -Wall -O3
 
     if impl(ghc >= 6.9)
       build-depends: ghc-prim
+
+    default-language: Haskell98

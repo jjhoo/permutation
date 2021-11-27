@@ -95,7 +95,7 @@ import Data.Permute.IOBase
 -- | Class for representing a mutable permutation.  The type is parameterized
 -- over the type of the monad, @m@, in which the mutable permutation will be
 -- manipulated.
-class (Monad m) => MPermute p m | p -> m, m -> p where
+class (MonadFail m) => MPermute p m | p -> m, m -> p where
     -- | Get the size of a permutation.
     getSize :: p -> m Int
 

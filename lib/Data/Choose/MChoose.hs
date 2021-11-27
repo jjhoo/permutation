@@ -66,7 +66,7 @@ import Data.Choose.IOBase
 -- | Class for representing a mutable combination.  The type is parameterized
 -- over the type of the monad, @m@, in which the mutable combination will be
 -- manipulated.
-class (Monad m) => MChoose c m | c -> m, m -> c where
+class (MonadFail m) => MChoose c m | c -> m, m -> c where
     -- | Get the number of possibilities, @n@ in the combination.
     getPossible :: c -> m Int
     
